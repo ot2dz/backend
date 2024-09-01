@@ -1,0 +1,14 @@
+[build]
+  functions = "netlify/functions-build"  # مسار دوال الوظائف المنشورة بعد البناء
+
+[dev]
+  publish = "dist"  # مسار مجلد النشر المحلي لموقعك
+
+[functions]
+  directory = "netlify/functions"  # مسار دوال الوظائف المصدر
+  node_bundler = "esbuild"  # استخدام esbuild لتجميع دوال الوظائف
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
